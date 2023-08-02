@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="student")
 public class Student {
+
+
     //define fields
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,13 +23,16 @@ public class Student {
     private String email;
 
     //define constructors
+    public Student() {
+
+    }
 
     public Student(String firstName, String lastName, String email) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
-
 
     //define getters and setters
 
@@ -62,7 +67,6 @@ public class Student {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
     //define toString() method
 
